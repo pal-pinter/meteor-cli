@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Meteor scaffolding tool
+# with modular design
+# based on Meteor Guide
+# directory structure
+#
+# Pál Pintér <pal@palpinter.com>
+# 2017
+#
+# License: MIT
+#
+
+echo command is: $1
+
+echo Scaffolding started
+
+exit 0
