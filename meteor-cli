@@ -11,6 +11,11 @@
 # License: MIT
 #
 
+CONFIG_DIR=~/.config/meteor-cli
+
+echo $PWD
+$CONFIG_DIR/help
+
 echo command is: $1
 
 echo Scaffolding started
