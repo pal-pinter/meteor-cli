@@ -1,0 +1,37 @@
+#!/bin/bash
+#
+# Helper function create index file
+#
+# Pintér Pál <pal@palpinter.com>
+# 2017
+# License: MIT
+#
+# Parameters:
+#  $1 - index type
+# 
+# Sample: index type
+#
+
+if [ -z $1 ]; then
+  echo
+  echo "  $(tput setaf 1)Missing command line parameter!$(tput setaf 7)"
+  echo
+  echo "  Usage: header /sample/path/to/file"
+  echo
+  exit 0
+fi
+
+CONFIG_DIR=~/.config/meteor-cli
+TYPE=$($CONFIG_DIR/capitalize-case $1)
+
+echo
+echo "# import functions"
+echo "# end import functions"
+echo 
+echo $TYPE = {
+echo }
+echo 
+echo exports.$TYPE = $TYPE
+echo 
+
+exit 0
