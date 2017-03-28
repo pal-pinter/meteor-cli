@@ -1,3 +1,26 @@
 #!/bin/bash
+#
+# Print meteor-cli help
+#
+# Pintér Pál pal@palpinter.com
+# 2017
+# License: MIT
+#
 
-echo help
+echo "  Usage:"
+echo "  -------------------"
+echo "  $(tput setaf 2)create $(tput setaf 3)app-name$(tput setaf 7) - create meteor app"
+echo "  $(tput setaf 2)module $(tput setaf 3)module-name$(tput setaf 7) - create module"
+echo "  $(tput setaf 2)client-config $(tput setaf 3)module-name:config-name$(tput setaf 7) - create module client config function"
+echo "  $(tput setaf 2)client-lib $(tput setaf 3)module-name:function-name$(tput setaf 7) - create module client library function"
+echo "  $(tput setaf 2)client-store $(tput setaf 3)module-name:function-name$(tput setaf 7) - create module client store function"
+echo "  $(tput setaf 2)i18n $(tput setaf 3)module-name:function-name$(tput setaf 7) - create module i18n function"
+echo "  $(tput setaf 2)method $(tput setaf 3)module-name:method-name$(tput setaf 7) - create module method"
+echo "  $(tput setaf 2)model $(tput setaf 3)module-name:model-name$(tput setaf 7) - generate a module data model"
+echo "  $(tput setaf 2)route $(tput setaf 3)module-name:route-name$(tput setaf 7) - generate a module-route"
+echo "  $(tput setaf 2)server-config $(tput setaf 3)module-name:config-name$(tput setaf 7) - create module server config function"
+echo "  $(tput setaf 2)server-lib $(tput setaf 3)module-name:function-name$(tput setaf 7) - create module server library function"
+echo "  $(tput setaf 2)server-method $(tput setaf 3)module-name:method-name$(tput setaf 7) - create module server only method"
+echo "  $(tput setaf 2)publication $(tput setaf 3)module-name:publication-name$(tput setaf 7) - generate a publication"
+echo "  $(tput setaf 2)component $(tput setaf 3)component-name$(tput setaf 7) - generate an UI component"
+echo

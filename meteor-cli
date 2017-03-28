@@ -13,11 +13,17 @@
 
 CONFIG_DIR=~/.config/meteor-cli
 
+if [ -z $1 ]; then
+  echo
+  echo "  $(tput setaf 1)ERROR: missing command line parameter!$(tput setaf 7)"
+  echo
+  $CONFIG_DIR/help
+  echo
+  exit 0
+fi
+
 echo $PWD
-$CONFIG_DIR/help
-
 echo command is: $1
-
 echo Scaffolding started
 
 exit 0
