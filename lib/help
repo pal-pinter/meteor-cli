@@ -7,8 +7,9 @@
 # License: MIT
 #
 
-echo "  Usage:"
+echo "  Usage: $(tput setaf 2)command $(tput setaf 3)command-argument$(tput setaf 7)"
 echo "  -------------------"
+echo "  Avalaible commands:"
 echo "  $(tput setaf 2)create $(tput setaf 3)app-name$(tput setaf 7) - create meteor app"
 echo "  $(tput setaf 2)module $(tput setaf 3)module-name$(tput setaf 7) - create module"
 echo "  $(tput setaf 2)client-config $(tput setaf 3)module-name:config-name$(tput setaf 7) - create module client config function"

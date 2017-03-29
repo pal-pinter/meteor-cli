@@ -15,7 +15,16 @@ CONFIG_DIR=~/.config/meteor-cli
 
 if [ -z $1 ]; then
   echo
-  echo "  $(tput setaf 1)ERROR: missing command line parameter!$(tput setaf 7)"
+  echo "  $(tput setaf 1)ERROR: missing command!$(tput setaf 7)"
+  echo
+  $CONFIG_DIR/help
+  echo
+  exit 0
+fi
+
+if [ -z $2 ]; then
+  echo
+  echo "  $(tput setaf 1)ERROR: missing command argument!$(tput setaf 7)"
   echo
   $CONFIG_DIR/help
   echo
