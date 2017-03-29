@@ -19,7 +19,6 @@ echo imports/ui
 echo imports/ui/component
 echo imports/ui/layout
 echo imports/ui/page
-echo imports/ui/styles
 echo private
 echo public
 echo server
