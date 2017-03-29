@@ -24,10 +24,18 @@ CONFIG_DIR=~/.config/meteor-cli
 DIR_STRUCTURE=$($CONFIG_DIR/cfg-module-skeleton)
 MODULE_NAME=$($CONFIG_DIR/fn-capitalize-case $1)
 
+echo $MODULE_NAME
+
 if [[ ! -z $DIR_STRUCTURE ]]; then
   for DIR in $DIR_STRUCTURE
   do
-    mkdir imports/api/$1/$DIR
+    mkdir -p imports/api/$1/$DIR
     touch imports/api/$1/$DIR/.gitkeep
   done
 fi
+
+# TODO: git commands
+echo git add -A
+echo git commit -am "'"$MODULE_NAME" module added'"
+
+exit 0
