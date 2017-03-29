@@ -1,0 +1,15 @@
+#!/bin/bash
+#
+# Client startup stylus template
+#
+# Pintér Pál <pal@palpinter.com>
+# 2017
+# License: MIT
+#
+# Usage: tpl-imports-startup-client-index-styl
+#
+
+echo "// Client startup stylus file" > imports/startup/client/index.styl
+echo "" >> imports/startup/client/index.styl
+
+exit 0

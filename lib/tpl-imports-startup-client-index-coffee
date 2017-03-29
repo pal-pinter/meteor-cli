@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Client startup template
+#
+# Pintér Pál <pal@palpinter.com>
+# 2017
+# License: MIT
+#
+# Usage: tpl-imports-startup-client-index-coffee
+#
+
+CONFIG_DIR=~/.config/meteor-cli
+
+$CONFIG_DIR/tpl-header imports/startup/client/index.coffee > imports/startup/client/index.coffee
+
+exit 0

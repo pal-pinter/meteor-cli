@@ -20,6 +20,41 @@ if [ -z $1 ]; then
   exit 0
 fi
 
-echo create application: $1
+CONFIG_DIR=~/.config/meteor-cli
+ATMOSPHERE_PACKAGES=$($CONFIG_DIR/cfg-atmosphere-packages)
+NODE_PACKAGES=$($CONFIG_DIR/cfg-node-packages)
+DIR_STRUCTURE=$($CONFIG_DIR/cfg-application-skeleton)
+
+meteor create --bare $1
+cd $1
+yarn
+
+if [[ ! -z $ATMOSPHERE_PACKAGES ]]; then
+  meteor add $ATMOSPHERE_PACKAGES
+fi
+
+if [[ ! -z $NODE_PACKAGES ]]; then
+  yarn add $NODE_PACKAGES
+fi
+
+if [[ ! -z $DIR_STRUCTURE ]]; then
+  for DIR in $DIR_STRUCTURE
+  do
+    mkdir $DIR
+    touch $DIR/.gitkeep
+  done
+  $($CONFIG_DIR/tpl-client-head $1)
+  $($CONFIG_DIR/tpl-client-main-coffee)
+  $($CONFIG_DIR/tpl-client-main-styl)
+  $($CONFIG_DIR/tpl-imports-startup-client-index-coffee)
+  $($CONFIG_DIR/tpl-imports-startup-client-index-styl)
+  $($CONFIG_DIR/tpl-server-main-coffee)
+  $($CONFIG_DIR/tpl-imports-startup-server-index-coffee)
+fi
+
+git init
+echo node_modules > .gitignore
+git add -A
+git commit -am 'Initial release'
 
 exit 0

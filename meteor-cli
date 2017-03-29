@@ -61,6 +61,12 @@ case "$1" in
     echo create publication;;
   "component")
     echo create component;;
+  *)
+    echo
+    echo "  $(tput setaf 1)ERROR: unknown command!$(tput setaf 7)"
+    echo
+    $CONFIG_DIR/tpl-help
+    echo;;
 esac
 
 exit 0

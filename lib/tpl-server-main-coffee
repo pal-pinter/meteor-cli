@@ -1,0 +1,18 @@
+#!/bin/bash
+#
+# Server main template
+#
+# Pintér Pál <pal@palpinter.com>
+# 2017
+# License: MIT
+#
+# Usage: tpl-server-main-coffee
+#
+
+CONFIG_DIR=~/.config/meteor-cli
+
+$CONFIG_DIR/tpl-header server/main.coffee > server/main.coffee
+echo "require '/imports/startup/server/index.coffee'" >> server/main.coffee
+echo "" >> server/main.coffee
+
+exit 0

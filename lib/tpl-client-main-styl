@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+# Client main stylus template
+#
+# Pintér Pál <pal@palpinter.com>
+# 2017
+# License: MIT
+#
+# Usage: tpl-client-main-styl
+#
+
+echo "// Client main stylus file" > client/main.styl
+echo "" >> client/main.styl
+echo "@import '{}/imports/startup/client/index.styl'" >> client/main.styl
+echo "" >> client/main.styl
+exit 0

@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# Client head template
+#
+# Pintér Pál <pal@palpinter.com>
+# 2017
+# License: MIT
+#
+# Parameters:
+#  $1 - application-name
+# 
+# Sample: tpl-client-head application-name
+#
+
+FILE=client/head.jade
+
+echo "head" >> $FILE
+echo "  meta(charset=\"utf-8\")" >> $FILE
+echo "  meta(http-equiv=\"X-UA-Compatible\", content=\"IE=edge\")" >> $FILE
+echo "  meta(http-equiv=\"content-language\", content=\"hu\")" >> $FILE
+echo "  meta(name=\"viewport\", content=\"width=device-width, initial-scale=1\")" >> $FILE
+echo "  meta(name=\"fragment\", content=\"!\")" >> $FILE
+echo "  title $1" >> $FILE
+
+exit 0

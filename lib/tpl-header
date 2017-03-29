@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Helper function create file header
+# File header template
 #
 # Pintér Pál <pal@palpinter.com>
 # 2017
@@ -21,12 +21,12 @@ if [ -z $1 ]; then
   exit 0
 fi
 
-echo ###
-echo   $1
-echo ###
+echo "###"
+echo "  $1"
+echo "###"
 echo 
-echo DEBUG = true
-echo console.log "'"$1" is loaded' if DEBUG"
-echo
+echo "DEBUG = true"
+echo "console.log '"$1" is loaded' if DEBUG"
+echo ""
 
 exit 0
