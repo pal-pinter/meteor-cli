@@ -12,12 +12,13 @@
 #
 
 CONFIG_DIR=~/.config/meteor-cli
+CURRENT_DIR=$PWD
 
 if [ -z $1 ]; then
   echo
   echo "  $(tput setaf 1)ERROR: missing command!$(tput setaf 7)"
   echo
-  $CONFIG_DIR/help
+  $CONFIG_DIR/tpl-help
   echo
   exit 0
 fi
@@ -26,13 +27,40 @@ if [ -z $2 ]; then
   echo
   echo "  $(tput setaf 1)ERROR: missing command argument!$(tput setaf 7)"
   echo
-  $CONFIG_DIR/help
+  $CONFIG_DIR/tpl-help
   echo
   exit 0
 fi
 
-echo $PWD
-echo command is: $1
-echo Scaffolding started
+case "$1" in
+  "create")
+     $CONFIG_DIR/cmd-create-application $2;;
+  "module")
+    echo create module;;
+  "client-config")
+    echo create client config;;
+  "client-lib")
+    echo create client lib;;
+  "client-store")
+    echo create client store config;;
+  "i18n")
+    echo create i18n;;
+  "method")
+    echo create method;;
+  "model")
+    echo create model;;
+  "route")
+    echo create model;;
+  "server-config")
+    echo create server config;;
+  "server-lib")
+    echo create server lib;;
+  "server-method")
+    echo create server method;;
+  "publication")
+    echo create publication;;
+  "component")
+    echo create component;;
+esac
 
 exit 0

@@ -1,0 +1,25 @@
+#!/bin/bash
+#
+# Create application command
+#
+# Pintér Pál <pal@palpinter.com>
+# 2017
+# License: MIT
+#
+# Parameters:
+#  $1 - application name
+# Sample: cmd-create-application sample-application
+#
+
+if [ -z $1 ]; then
+  echo
+  echo "  $(tput setaf 1)ERROR: missing command argument!$(tput setaf 7)"
+  echo
+  $CONFIG_DIR/tpl-help
+  echo
+  exit 0
+fi
+
+echo create application: $1
+
+exit 0
