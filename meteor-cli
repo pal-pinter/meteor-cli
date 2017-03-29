@@ -36,7 +36,7 @@ case "$1" in
   "create")
      $CONFIG_DIR/cmd-create-application $2;;
   "module")
-    echo create module;;
+    $CONFIG_DIR/cmd-create-module $2;;
   "client-config")
     echo create client config;;
   "client-lib")

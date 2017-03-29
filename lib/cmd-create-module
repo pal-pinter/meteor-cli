@@ -1,0 +1,33 @@
+#!/bin/bash
+#
+# Create application module
+#
+# Pintér Pál <pal@palpinter.com>
+# 2017
+# License: MIT
+#
+# Parameters:
+#  $1 - module-name
+# Usage: cmd-create-module module-name
+#
+
+if [ -z $1 ]; then
+  echo
+  echo "  $(tput setaf 1)ERROR: missing command argument!$(tput setaf 7)"
+  echo
+  $CONFIG_DIR/tpl-help
+  echo
+  exit 0
+fi
+
+CONFIG_DIR=~/.config/meteor-cli
+DIR_STRUCTURE=$($CONFIG_DIR/cfg-module-skeleton)
+MODULE_NAME=$($CONFIG_DIR/fn-capitalize-case $1)
+
+if [[ ! -z $DIR_STRUCTURE ]]; then
+  for DIR in $DIR_STRUCTURE
+  do
+    mkdir imports/api/$1/$DIR
+    touch imports/api/$1/$DIR/.gitkeep
+  done
+fi
